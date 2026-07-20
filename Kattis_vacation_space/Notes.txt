@@ -1,0 +1,4 @@
+I'm building only the successor list. Just focus on this aspect. 
+
+But i don't know how to propely do that with the loop.
+
