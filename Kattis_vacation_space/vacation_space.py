@@ -1,25 +1,35 @@
 n = int(input())
+locations = list(map(int, input().split()))
 
-# TODO : Refactor this code into one line in order to create directly the dict ?
-# start refactor 
-locations = list(map(int,input().split()))
+if n == 1:
+    print(1)
+else:
 
-house_location = dict()
+    # Sort the house nbr according to its location in the street
+    # h-1 bc the house nbr start to 1
+    # Return a list of the house nbr sorted
+    order = sorted(range(1, n + 1), key=lambda h: locations[h - 1])
+    
+    # List of the location sort according the order.
+    x = [locations[h - 1] for h in order]
 
-for i,v in enumerate(locations):
-    house_location[i+1] = v
-# end refactor
+    # Compute the gaps between the house
+    gaps = [x[i + 1] - x[i] for i in range(n - 1)]
 
+    best_house = None
+    best_dist = -1
 
-sorted_house_location = dict(sorted(house_location.items(),key=lambda item : item[1]))
-# print(sorted_house_location) : {3: 1, 2: 3, 1: 4, 4: 7, 6: 10, 5: 11}
-print(sorted_house_location)
+    for i in range(n):
+        if i == 0:
+            dist = gaps[0]
+        elif i == n - 1:
+            dist = gaps[-1]
+        else:
+            dist = min(gaps[i - 1], gaps[i])
 
+        h = order[i]
+        if dist > best_dist or (dist == best_dist and h < best_house):
+            best_dist = dist
+            best_house = h
 
-graph = list(sorted_house_location.keys())
-
-succ = [0]*len(graph)
-for i in range(len(graph)):
-    # The loop is not working. Index out of range on the graph[i] or succ
-    succ[graph[i]] = graph[i+1]
-print(succ)
+    print(best_house)
