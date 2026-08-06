@@ -17,5 +17,30 @@ table = [
     , [2,3,3 ,0]
 ]
 
+graph = []
+
+for i in range(n):
+    for j in range(n):
+        dist = table[i][j]
+        graph.append([i,j, dist])
+
+adj_list = []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
