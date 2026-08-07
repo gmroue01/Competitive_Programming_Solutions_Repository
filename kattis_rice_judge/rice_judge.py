@@ -3,7 +3,7 @@ pref = input()
 rices = []
 for i in range(N):
     A, S = map(int, input().split())
-    rices.append([A, S, A*S, i])
+    rices.append([A, S, A+S, i])
 
 
 if pref == "antal":
