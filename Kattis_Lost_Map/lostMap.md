@@ -52,9 +52,27 @@ The remaining `n` lines are the distance table (or distance matrix).
 
 **How do you read this table ?**
 
-Every integer entry of the matrix is the distance between the `i` village and `j` village, which `i` is the row's index and `j` is the column's index.   
+Every integer entry of the matrix is the distance between the `i` village and `j` village, where `i` is the row index and `j` is the column index. 
+
+The distance values are set between $0$ and $10^7$. Additionally, every diagonal entry is zero, because the distance between the village $`i`$ and itself is zero.
+
+This means the graph is represented as follows : 
 
 
+```mermaid
+graph LR
+
+1 ---|1| 2
+1 ---|1| 3
+1 ---|2| 4
+2 ---|2| 3
+2 ---|3| 4
+3 ---|3| 4
+```
+
+Since every diagonal entry is non-negative, it means that the graph must be fully connected for every input matrix. 
+
+Recall that , *a graph is said to be **connected** if there is a path between every pair of vertices* as you can see in the graph.
 
 
 
