@@ -77,3 +77,23 @@ Recall that , *a graph is said to be **connected** if there is a path between ev
 
 
 
+**How to represent the graph in my code ?**
+
+There are multiple way to represent a graph : adjacency matrix, edge list, adjacency set,etc.
+
+But, we do actually need to explicitly build one ? No, we don't.
+
+To solve this problem, we only need two pieces of information:
+
+    - Distance values
+    - Optimal nodes to build the road
+
+Since distances values are already represented by the input problem matrix, we should focus on this "optimal nodes" thing.
+
+
+
+
+
+## How to solve the problem : Minimum Spanning Tree
+
+Now, since we got a graph,
