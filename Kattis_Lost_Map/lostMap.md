@@ -88,12 +88,15 @@ To solve this problem, we only need two pieces of information:
     - Distance values
     - Optimal nodes to build the road
 
-Since distances values are already represented by the input problem matrix, we should focus on this "optimal nodes" thing.
+Since distance values are already represented by the input problem matrix, we should focus on this "optimal nodes" concept.to choose the proper data structure for the graph, we first need to understand how we are actually going to solve the problem.
 
-
-
+Let's focus on the solution logic.
 
 
 ## How to solve the problem : Minimum Spanning Tree
 
-Now, since we got a graph,
+The solution of this kind of problem is very well-known. **MSTs** have direct applications in the design of networks, in cluster analysis and handwriting recognition for example.
+
+So, let me introduce you to **Prim's algorithm**.
+
+Formaly, ***Prim's algorithm** is a greedy algorithm that finds the subset of edges that connects all the vertices together for a weighted undirected graph (which is exactly the MST Problem)*. 
