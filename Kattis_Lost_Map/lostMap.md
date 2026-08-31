@@ -100,3 +100,19 @@ The solution of this kind of problem is very well-known. **MSTs** have direct ap
 So, let me introduce you to **Prim's algorithm**.
 
 Formaly, ***Prim's algorithm** is a greedy algorithm that finds the subset of edges that connects all the vertices together for a weighted undirected graph (which is exactly the MST Problem)*. 
+
+
+A **greedy algorihtm** is an algorithm *that always makes the locally optimal choice, and subsequently does not reconsider past choices*.
+
+That is, the algorithm starts at any nodes of the graph. It starts travelling along the graph. It chooses the best next node according to the **MST Problem's** objective.
+
+Since it is a **greedy algorithm**, it never reconsiders previously chosen nodes. Usually, this means the algorithm might maybe not find the optimal solution.
+
+
+How can we be sure that it will works all the time ? That's a very long story, which I won't go into in this document (maybe later, who knows!).
+
+
+
+For now, let's break down this algorithm and see how it works.
+
+
