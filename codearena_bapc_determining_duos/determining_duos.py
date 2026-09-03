@@ -1,34 +1,40 @@
+
+from collections import Counter
 n, r = map(int, input().split())
 
 
-expected_score = 0.5*(n*r)*(3*n+1)
+def complement(m):
+    return tuple(1-b for b in m)
 
 
-rank = []
 
 
+
+
+bitvec = [[0]*(2*n) for _ in range(r)]
+somme = 0
 for i in range(r):
     topic_ranking = list(map(int, input().split()))
-    rank.append(topic_ranking)
+    for j in range(2*n):
+        if topic_ranking[j] > n:
+            bitvec[i][j] = 1
+        
 
 
-possible = False
-score = []
-for i in range(n):
-    current = rank[0][i]
-    for j in range(1, n):
-        if i != j:
-            max_r = max(rank[1][j])
-            max_r = max(max_r, r)
-            score.append(max_r)
+
+motifs = []
+for j in range(2*n):
+    m = tuple(bitvec[i][j] for i in range(r))
+    motifs.append(m)
 
 
-for s in score:
-    if s == expected_score:
-        possible = True
+compte = Counter(motifs)
+
+possible = all(compte[m] == compte[complement(m)] for m in compte)
 
 
 if possible:
     print("possible")
 else:
     print("impossible")
+
